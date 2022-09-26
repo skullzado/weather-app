@@ -1,11 +1,26 @@
 {
-  "parser": "@babel/eslint-parser",
-  "extends": ["airbnb-base", "prettier"],
-  "plugins": ["prettier"],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": [
+      "error",
+      {
+        "useTabs": false
+      }
+    ]
   },
   "env": {
+    "es6": true,
     "browser": true,
     "node": true
   }
